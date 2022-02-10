@@ -47,7 +47,12 @@ module.exports = class TreeNode {
    * Appends a child to this tree node
    * @param  {TreeNode} node a tree node
    */
-  setChildren (children) {
-    this.children = children || [];
-  }
+  /**
+   * This does not accomplish appending child to a Node, so I made a change.
+   * setChildren (children) {
+   *  this.children = children || [];
+   * }*/ 
+    addChild (node) {
+      this.children.push(node);
+    }
 };

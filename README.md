@@ -32,7 +32,8 @@ are not clear then feel free to make some assumptions but provide
 documentation on why you made these assumptions.
 
 ## Bonus Points
-While optimizing the solution is not the main focus, please feel free to identify any anti-patterns observed or optimizations needed. 
+
+While optimizing the solution is not the main focus, please feel free to identify any anti-patterns observed or optimizations needed.
 
 Feel free to call out, or preferrably change, any packages, coding styles, or naming conventions changed.
 
