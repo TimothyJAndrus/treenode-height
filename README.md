@@ -41,6 +41,21 @@ If this were an application you were using for a project make the changes that w
 
 ## Changes
 
+This is a change I made in TreeNode.js
+/**
+
+- Appends a child to this tree node
+- @param  {TreeNode} node a tree node
+   */
+  /**
+- This does not accomplish appending child to a Node, so I made a change.
+- setChildren (children) {
+- this.children = children || [];
+- }*/
+    addChild (node) {
+      this.children.push(node);
+    }
+
 ## Submitting
 
 Once you have completed this programming exercise, create a zip file
