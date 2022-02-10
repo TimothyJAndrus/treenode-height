@@ -2,7 +2,7 @@ function getRandomInt (max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-module.exports = class TreeNode {
+export default class TreeNode {
   /**
    * @param {TreeNode} parent direct parent tree node or `null` if this node is a root node
    * @param {Object} data any data that should be attached to tree node

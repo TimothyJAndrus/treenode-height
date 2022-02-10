@@ -7,9 +7,9 @@
  * @return {TreeNode} the root `TreeNode`
  */
 
-const TreeNode = require("./TreeNode");
+import TreeNode from "./TreeNode";
 
-module.exports = function loadTree (obj) {
+export default function loadTree (obj) {
   
   // This is the creation of the RootNode.
   const rootNode = new TreeNode(null, {

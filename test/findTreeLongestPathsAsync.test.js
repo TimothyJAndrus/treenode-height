@@ -1,7 +1,7 @@
-const test = require('ava');
-const findTreeLongestPathsAsync = require('../src/findTreeLongestPathsAsync');
-const loadTree = require('../src/loadTree');
-const TreeNode = require('../src/TreeNode');
+import test from 'ava';
+import findTreeLongestPathsAsync from '../src/findTreeLongestPathsAsync';
+import loadTree from '../src/loadTree';
+import TreeNode from '../src/TreeNode';
 
 const tree0 = loadTree(require('./data/tree0.json'));
 const tree1 = loadTree(require('./data/tree1.json'));
@@ -17,7 +17,7 @@ test('find longest tree paths for tree0', async (t) => {
 test('find longest tree paths for tree1', async (t) => {
   const longestPaths = await findTreeLongestPathsAsync(tree1);
   // Two paths of same length
-  const possiblePathOne = [
+  const testPathOne = [
     "tree1",
     "tree1.b",
     "tree1.b.c",
@@ -28,7 +28,7 @@ test('find longest tree paths for tree1', async (t) => {
     "tree1.b.c.b.a.b.b.a"
   ];
 
-  const possiblePathTwo = [
+  const testPathTwo = [
     "tree1",
     "tree1.b",
     "tree1.b.c",
@@ -47,7 +47,7 @@ test('find longest tree paths for tree1', async (t) => {
 
   let isMatching = true;
   while (isMatching) {
-    possiblePathOne.forEach((datastring, idx) => {
+    testPathOne.forEach((datastring, idx) => {
       if (datastring === pathStringData[0][idx]) {
         isMatching = true;
       } else {
@@ -55,7 +55,7 @@ test('find longest tree paths for tree1', async (t) => {
       }
     })
 
-    possiblePathTwo.forEach((datastring, idx) => {
+    testPathTwo.forEach((datastring, idx) => {
       if (datastring === pathStringData[1][idx]) {
         isMatching = true;
       } else {
@@ -67,16 +67,14 @@ test('find longest tree paths for tree1', async (t) => {
 
   }
 
-  longestPaths.length === 2 && 
-  isMatching && 
-  t.pass()
+  longestPaths.length === 2 && isMatching && t.pass()
 
 });
 
 test('find longest tree paths for tree2', async (t) => {
   const longestPaths = await findTreeLongestPathsAsync(tree2);
   // There is only 1 longest path
-  const possiblePath = [
+  const testPath = [
     "tree1",
     "tree2.b",
     "tree2.b.c",
@@ -97,7 +95,7 @@ test('find longest tree paths for tree2', async (t) => {
 
   let isMatching = true;
   while (isMatching) {
-    possiblePath.forEach((datastring, idx) => {
+    testPath.forEach((datastring, idx) => {
       if (datastring === pathStringData[0][idx]){
         isMatching = true;
       } else {
@@ -109,9 +107,7 @@ test('find longest tree paths for tree2', async (t) => {
 
   }
 
-  longestPaths.length === 1 && 
-  isMatching && 
-  t.pass()
+  longestPaths.length === 1 && isMatching && t.pass()
 
 });
 
@@ -119,7 +115,7 @@ test('find longest tree paths for tree2', async (t) => {
 test('find longest tree paths for tree3', async (t) => {
   const longestPaths = await findTreeLongestPathsAsync(tree3);
   // There are 4 possible paths for which to account.
-  const possiblePathOne = [
+  const testPathOne = [
     "tree3",
     "tree3.b",
     "tree3.b.c",
@@ -128,7 +124,7 @@ test('find longest tree paths for tree3', async (t) => {
     "tree3.b.c.b.a.a",
   ];
 
-  const possiblePathTwo = [
+  const testPathTwo = [
     "tree3",
     "tree3.b",
     "tree3.b.c",
@@ -137,7 +133,7 @@ test('find longest tree paths for tree3', async (t) => {
     "tree3.b.c.b.a.b",
   ];
 
-  const possiblePathThree = [
+  const testPathThree = [
     "tree3",
     "tree3.c",
     "tree3.c.c",
@@ -146,7 +142,7 @@ test('find longest tree paths for tree3', async (t) => {
     "tree3.c.c.b.a.a",
   ];
 
-  const possiblePathFour = [
+  const testPathFour = [
     "tree3",
     "tree3.c",
     "tree3.c.c",
@@ -163,7 +159,7 @@ test('find longest tree paths for tree3', async (t) => {
 
   let isMatching = true;
   while (isMatching) {
-    possiblePathOne.forEach((datastring, idx) => {
+    testPathOne.forEach((datastring, idx) => {
       if (datastring === pathStringData[0][idx]){
         isMatching = true;
       } else {
@@ -171,7 +167,7 @@ test('find longest tree paths for tree3', async (t) => {
       }
     })
 
-    possiblePathTwo.forEach((datastring, idx) => {
+    testPathTwo.forEach((datastring, idx) => {
       if (datastring === pathStringData[1][idx]){
         isMatching = true;
       } else {
@@ -179,7 +175,7 @@ test('find longest tree paths for tree3', async (t) => {
       }
     })
 
-    possiblePathThree.forEach((datastring, idx) => {
+    testPathThree.forEach((datastring, idx) => {
       if (datastring === pathStringData[2][idx]){
         isMatching = true;
       } else {
@@ -187,7 +183,7 @@ test('find longest tree paths for tree3', async (t) => {
       }
     })
 
-    possiblePathFour.forEach((datastring, idx) => {
+    testPathFour.forEach((datastring, idx) => {
       if (datastring === pathStringData[3][idx]){
         isMatching = true;
       } else {
@@ -198,9 +194,7 @@ test('find longest tree paths for tree3', async (t) => {
     break;
   }
 
-  longestPaths.length === 4 && 
-  isMatching && 
-  t.pass()
+  longestPaths.length === 4 && isMatching && t.pass()
 
 });
 

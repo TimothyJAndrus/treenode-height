@@ -11,7 +11,7 @@
  * @return {Array<Array<TreeNode>>} an array whose items are arrays that
  *   represent path to each leaf node at the greatest depth
  */
-module.exports = async function findTreeLongestPathsAsync (tree) {
+export default async function findTreeLongestPathsAsync (tree) {
   // In case of edgecase for RootNode with no Children.
   const childrenOfRootNode = await tree.getChildrenAsync();
   if (childrenOfRootNode.length <= 0) {

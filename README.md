@@ -41,6 +41,8 @@ If this were an application you were using for a project make the changes that w
 
 ## Changes
 
+Converted all files to ES modules.
+
 This is a change I made in TreeNode.js
 /**
 
